@@ -9,6 +9,7 @@ let inputString = '';
 let currentLine = 0;
 
 process.stdin.on('data', inputStdin => {
+    console.log(inputStdin);
     inputString += inputStdin;
 });
 
@@ -16,7 +17,6 @@ process.stdin.on('end', _ => {
     inputString = inputString.replace(/\s*$/, '')
         .split('\n')
         .map(str => str.replace(/\s*$/, ''));
-
     main();
 });
 
@@ -24,18 +24,7 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-// Complete the bfs function below.
-function bfs(n, m, edges, s) {
-    const graph = new Array(n).fill({neighbors:[]});
-    const edgeLength = 6;
-    for (let i=1; i<m+1; i++) {
-        let edge = edges[i];
-        graph[i] =
-        console.log(edge);
-    }
-    // console.log(graph);
-}
-
+const bfs = require('./bfs');
 
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
