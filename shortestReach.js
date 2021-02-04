@@ -1,7 +1,9 @@
 'use strict';
 
 const fs = require('fs');
-
+const bfs = require('./bfs');
+const Queue = require('./Queue');
+const Graph = require('./Graph');
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
@@ -24,8 +26,6 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-const bfs = require('./bfs');
-
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
@@ -47,6 +47,8 @@ function main() {
         const s = parseInt(readLine(), 10);
 
         let result = bfs(n, m, edges, s);
+
+        console.log(result);
 
         ws.write(result.join(" ") + "\n");
     }
