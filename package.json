@@ -1,11 +1,19 @@
 {
-  "name": "@spaceboycoop/graph-breadthfirst",
+  "name": "@spaceboycoop/shortest-reach",
   "version": "1.0.0",
-  "description": "",
-  "main": "breadthFirstSearch.js",
+  "description": "find the shortest reach in a graph using breadth-first traversal",
+  "main": "shortestReach.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cat testInput.txt | node shortestReach.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Cooper Brislain",
+  "license": "ISC",
+  "keywords": [
+    "bfs",
+    "breadth-first-search",
+    "breadth",
+    "first",
+    "search",
+    "traversal"
+  ]
 }

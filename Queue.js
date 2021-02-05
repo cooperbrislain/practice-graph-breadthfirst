@@ -1,13 +1,31 @@
-function Queue() {
-    this.items = [];
+class Queue {
+    constructor() {
+        this.items = new Array
+    }
 
-}
+    enqueue = function(item) {
+        this.items.push(item);
+    }
 
-Queue.prototype.enqueue = function(item) { this.items.push(item); };
-Queue.prototype.dequeue = function() { return this.items.pop() };
+    dequeue = function() {
+        return this.items.pop();
+    }
 
-Queue.prototype.length = function()  {
-    this.valueOf = () => { this.items.length; }
+    isEmpty = function() {
+        return this.items.length === 0;
+    }
+
+    toString = function() {
+        return `[ ${this.items.join(', ')} ]`
+    }
+
+    get length() {
+        return this.items.length;
+    }
+
+    get [Symbol.toStringTag]() {
+        return 'Queue';
+    }
 }
 
 module.exports = Queue;
