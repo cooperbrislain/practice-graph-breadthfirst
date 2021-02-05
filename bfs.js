@@ -25,9 +25,8 @@ const bfs = (n, m, edges, v0) => {
     q.enqueue(v0);
     while (!q.isEmpty() && (console.log('QUEUE: ', q.items) || 1)) {
         let v = q.dequeue();
-        console.log(v);
         let adjacent = g.edgeList.get(v);
-        console.log(adjacent);
+        console.log(`visiting ${v}... adjacent vertices: ${adjacent.join(', ')}`);
         for (const w of adjacent) {
             if (!visited[w]) {
                 visited[w] = true;
