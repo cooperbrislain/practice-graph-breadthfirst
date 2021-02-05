@@ -27,7 +27,7 @@ function readLine() {
 }
 
 function main() {
-    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+    // const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
     const q = parseInt(readLine(), 10);
 
@@ -50,8 +50,12 @@ function main() {
 
         console.log(result);
 
-        ws.write(result.join(" ") + "\n");
+        for (const [k, v] of Object.entries(result)) {
+            process.stdout.write(`${k} => ${v===-1? '[no path]' : v} \n`);
+        }
+
+        // process.stdout.write(`${result.join(' ')}\n`);
     }
 
-    ws.end();
+    // ws.end();
 }

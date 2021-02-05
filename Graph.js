@@ -2,6 +2,7 @@ class Graph {
     constructor(numEdges) {
         this.edgeList = new Map();
     }
+
     addVertex = function (v) {
         this.edgeList.set(v, []);
     }
@@ -12,6 +13,8 @@ class Graph {
     }
 
     vertCount = function() { return this.edgeList.entries().length; };
+
+    getVerts = function() { return this.edgeList.keys() };
 }
 
 module.exports = Graph;

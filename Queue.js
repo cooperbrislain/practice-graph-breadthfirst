@@ -26,6 +26,10 @@ class Queue {
     get [Symbol.toStringTag]() {
         return 'Queue';
     }
+
+    get next() {
+        return !this.items.isEmpty() ? this.items[0] : undefined;
+    }
 }
 
 module.exports = Queue;
